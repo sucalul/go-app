@@ -1,9 +1,10 @@
 package main
 
 import (
-	"chat/trace"
 	"log"
 	"net/http"
+
+	"github.com/yuya0729/go-app/trace"
 
 	"github.com/gorilla/websocket"
 	"github.com/stretchr/objx"
