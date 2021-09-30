@@ -21,6 +21,7 @@ type room struct {
 	clients map[*client]bool
 	// tracerはcあhっとルームで行われた捜査ログを受け取る
 	tracer trace.Tracer
+	avatar Avatar
 }
 
 func newRoom() *room {
@@ -30,6 +31,7 @@ func newRoom() *room {
 		leave:   make(chan *client),
 		clients: make(map[*client]bool),
 		tracer:  trace.Off(),
+		avatar:  avatar,
 	}
 }
 
