@@ -3,7 +3,6 @@ package main
 import (
 	"crypto/md5"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 	"strings"
@@ -67,7 +66,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 			log.Fatalln("ユーザーの取得に失敗しました", provider, "- ", err)
 		}
 		m := md5.New()
-		io.WriteString(m, string.ToLower(user.Email()))
+		// io.WriteString(m, string.ToLower(user.Email()))
 		userID := fmt.Sprintf("%x", m.Sum(nil))
 		authCookieValue := objx.New(map[string]interface{}{
 			"userid":     userID,
